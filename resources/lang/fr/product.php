@@ -12,6 +12,6 @@ return [
     'Compatible tous smartphones' => 'Compatible tous smartphones',
     'Technologie NFC' => 'Technologie NFC',
     'Son haute qualité' => 'Son haute qualité',
-    'Expédition rapide' => 'Expédition rapide',
+    'Expedition rapide' => 'Expédition rapide',
     'Vous aimerez aussi' => 'Vous aimerez aussi',
 ];

@@ -9,7 +9,7 @@ return [
     'Choisissez votre son' => 'Choose your sound',
     'Sélectionnez parmi nos 10 sons hilarants et uniques' => 'Select from our 10 hilarious and unique sounds',
     'Recevez votre tag' => 'Receive your tag',
-    'Direct reception at your home' => 'Direct reception at your home',
+    'Réception directe chez vous' => 'Direct reception at your home',
     'Surprenez !' => 'Surprise!',
     'Approchez un smartphone du tag et le magic opère' => 'Bring a smartphone close to the tag and the magic happens',
     'Nos tags sonores' => 'Our sound tags',
