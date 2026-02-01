@@ -117,7 +117,7 @@
     function addToCartForm() {
         return {
             productId: {{ $product->id }},
-            productName: '{{ addslashes($product->name) }}',
+            productName: '{{ addslashes($product->localized_name) }}',
             productPrice: {{ $product->price }},
             originalPrice: {{ $product->original_price ?? $product->price }},
             quantity: 1,

@@ -4,8 +4,8 @@
     $audioUrl = "https://www.soundtags.fr/public/audio/" . data_get($product, 'audio_file');
     $isOnSale = (bool) data_get($product, 'is_on_sale', false);
     $discount = data_get($product, 'discount_percentage');
-    $name = data_get($product, 'name');
-    $shortDescription = data_get($product, 'short_description');
+    $name = data_get($product, 'localized_name') ?? data_get($product, 'name');
+    $shortDescription = data_get($product, 'localized_short_description') ?? data_get($product, 'short_description');
     $formattedPrice = data_get($product, 'formatted_price');
     $originalPrice = data_get($product, 'original_price');
     // Tolérance: si l'info stock est absente (tableau partiel), considérer en stock par défaut

@@ -54,10 +54,10 @@
 
                     <details class="group p-4 sm:p-6">
                         <summary class="flex items-center justify-between cursor-pointer list-none focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500/40 rounded-xl transition-colors">
-                            <span class="text-white font-semibold text-base sm:text-lg pr-4 group-hover:text-white">{{ __('faq.Comment recevrai-je ma commande ?') }}</span>
+                            <span class="text-white font-semibold text-base sm:text-lg pr-4 group-hover:text-white">{{ __('faq.how_receive_order') }}</span>
                             <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </summary>
-                        <div class="text-gray-300 text-sm leading-relaxed">{{ __('faq.Nous expédions rapidement. Vous recevrez votre commande directement chez vous.') }}</div>
+                        <div class="text-gray-300 text-sm leading-relaxed">{{ __('faq.ship_quickly_home') }}</div>
                     </details>
 
                     <details class="group p-4 sm:p-6">

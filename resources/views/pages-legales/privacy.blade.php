@@ -31,7 +31,7 @@
 
                     <section>
                         <h2 class="text-white text-2xl font-semibold mb-2">{{ __('legal.Vos droits') }}</h2>
-                        <p class="text-gray-300 leading-relaxed">{{ __('legal.Droit d'accès, de rectification, d'effacement, de limitation, d'opposition et portabilité (dans les conditions du RGPD). Contact: dpo@soundtags.fr') }}</p>
+                        <p class="text-gray-300 leading-relaxed">{{ __("legal.Droit d'accès, de rectification, d'effacement, de limitation, d'opposition et portabilité (dans les conditions du RGPD). Contact: dpo@soundtags.fr") }}</p>
                     </section>
 
                     <section>

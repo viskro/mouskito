@@ -1,6 +1,6 @@
 <x-app-layout>
-    <x-slot name="title">{{ $pack->name }} - {{ __('packs.Personnalisez votre pack') }}</x-slot>
-    <x-slot name="metaDescription">{{ $pack->meta_description }}</x-slot>
+    <x-slot name="title">{{ $pack->localized_name }} - {{ __('packs.Personnalisez votre pack') }}</x-slot>
+    <x-slot name="metaDescription">{{ $pack->localized_meta_description }}</x-slot>
 
     <div x-data="packConfigurator()" class="min-h-screen bg-gray-900">
 
@@ -14,14 +14,14 @@
                             <li><span class="text-gray-600 mx-2">/</span></li>
                             <li><a href="{{ route('packs.index') }}" class="text-gray-400 hover:text-white transition-colors">{{ __('common.Packs') }}</a></li>
                             <li><span class="text-gray-600 mx-2">/</span></li>
-                            <li><span class="text-gray-300">{{ $pack->name }}</span></li>
+                            <li><span class="text-gray-300">{{ $pack->localized_name }}</span></li>
                         </ol>
                     </nav>
 
                     <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
                         <div class="flex-1">
-                            <h1 class="font-display font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-white mb-2 sm:mb-3 lg:mb-4">{{ $pack->name }}</h1>
-                            <p class="text-base sm:text-lg lg:text-xl text-gray-300 mb-3 sm:mb-4 lg:mb-6">{{ $pack->short_description }}</p>
+                            <h1 class="font-display font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-white mb-2 sm:mb-3 lg:mb-4">{{ $pack->localized_name }}</h1>
+                            <p class="text-base sm:text-lg lg:text-xl text-gray-300 mb-3 sm:mb-4 lg:mb-6">{{ $pack->localized_short_description }}</p>
 
                             <!-- Progress -->
                             <div class="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
@@ -87,7 +87,7 @@
                     <!-- Tags Grid -->
                     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
                         @foreach($soundTags as $tag)
-                            <div x-show="matchesSearch({{ json_encode($tag->name) }})"
+                            <div x-show="matchesSearch({{ json_encode($tag->localized_name) }})"
                                  class="bg-gray-800 rounded-xl sm:rounded-2xl border-2 transition-all duration-200 cursor-pointer transform hover:scale-105 relative"
                                  :class="getTagCount({{ $tag->id }}) > 0 ? 'border-white shadow-lg' : 'border-gray-700 hover:border-gray-600'"
                                  @click="addTag({{ $tag->id }})">
@@ -96,7 +96,7 @@
                                 <div class="aspect-square rounded-t-xl sm:rounded-t-2xl overflow-hidden bg-gray-700 relative">
                                     @if($tag->image)
                                         <img src="https://www.soundtags.fr/public/images/products/{{ $tag->image }}"
-                                             alt="{{ $tag->name }}"
+                                             alt="{{ $tag->localized_name }}"
                                              class="w-full h-full object-cover">
                                     @else
                                         <div class="w-full h-full flex items-center justify-center">
@@ -118,7 +118,7 @@
                                 <!-- Info -->
                                 <div class="p-2 sm:p-3 lg:p-4">
                                     <h3 class="font-semibold text-white text-xs sm:text-sm lg:text-base mb-2 line-clamp-2">
-                                        {{ $tag->name }}
+                                        {{ $tag->localized_name }}
                                     </h3>
 
                                     <!-- Audio duration -->
@@ -298,7 +298,7 @@
                 },
 
                 getTagName(tagId) {
-                    return soundTags[tagId]?.name || '{{ __("common.Tag inconnu") }}';
+                    return soundTags[tagId]?.localized_name || '{{ __("common.Tag inconnu") }}';
                 },
 
                 matchesSearch(tagName) {

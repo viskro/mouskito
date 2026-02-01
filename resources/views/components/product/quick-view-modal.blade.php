@@ -4,11 +4,11 @@
             <div class="flex items-start space-x-3 sm:space-x-4">
                 <div class="w-16 h-16 sm:w-24 sm:h-24 bg-gray-700 rounded-lg overflow-hidden flex-shrink-0">
                     @if($product->image_url)
-                        <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-full object-cover">
+                        <img src="{{ $product->image_url }}" alt="{{ $product->localized_name }}" class="w-full h-full object-cover">
                     @endif
                 </div>
                 <div class="flex-1 min-w-0">
-                    <h3 class="text-white font-bold text-base sm:text-lg truncate">{{ $product->name }}</h3>
+                    <h3 class="text-white font-bold text-base sm:text-lg truncate">{{ $product->localized_name }}</h3>
                     @if($product->is_on_sale)
                         <div class="mt-1 text-xs sm:text-sm">
                             <span class="text-white font-semibold">{{ number_format($product->price, 2) }} €</span>
@@ -18,7 +18,7 @@
                     @else
                         <div class="mt-1 text-xs sm:text-sm text-white font-semibold">{{ number_format($product->price, 2) }} €</div>
                     @endif
-                    <p class="text-gray-300 text-xs sm:text-sm mt-2 line-clamp-3">{{ $product->short_description ?? Str::limit($product->description, 160) }}</p>
+                    <p class="text-gray-300 text-xs sm:text-sm mt-2 line-clamp-3">{{ $product->localized_short_description ?? Str::limit($product->localized_description, 160) }}</p>
                 </div>
             </div>
             <div class="mt-4 sm:mt-6">

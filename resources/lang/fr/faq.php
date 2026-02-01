@@ -15,4 +15,14 @@ return [
     'Les remboursements ne sont pas possibles. Si votre produit présente un défaut à la réception, contactez-nous et nous trouverons une solution (échange, etc.).' => 'Les remboursements ne sont pas possibles. Si votre produit présente un défaut à la réception, contactez-nous et nous trouverons une solution (échange, etc.).',
     'Le smartphone doit-il être connecté à internet ?' => 'Le smartphone doit-il être connecté à internet ?',
     'Une connexion internet peut être requise pour lire certains contenus audio hébergés en ligne. La plupart des smartphones utilisent les données mobiles disponibles.' => 'Une connexion internet peut être requise pour lire certains contenus audio hébergés en ligne. La plupart des smartphones utilisent les données mobiles disponibles.',
+    // FAQ prefixed keys for blade templates
+    'faq.Le produit est-il numérique ou physique ?' => 'Le produit est-il numérique ou physique ?',
+    'faq.Nos Sound Tags sont des produits physiques NFC que vous recevez chez vous. Ils déclenchent un son lorsque vous approchez un smartphone compatible NFC.' => 'Nos Sound Tags sont des produits physiques NFC que vous recevez chez vous. Ils déclenchent un son lorsque vous approchez un smartphone compatible NFC.',
+    'faq.Comment utiliser un Sound Tag ?' => 'Comment utiliser un Sound Tag ?',
+    'faq.Il suffit d\'approcher un smartphone compatible NFC du tag. Aucun téléchargement d\'application n\'est nécessaire.' => 'Il suffit d\'approcher un smartphone compatible NFC du tag. Aucun téléchargement d\'application n\'est nécessaire.',
+    'how_receive_order' => 'Comment recevrai-je ma commande ?',
+    'ship_quickly_home' => 'Nous expédions rapidement. Vous recevrez votre commande directement chez vous.',
+    'faq.Proposez-vous des remboursements ?' => 'Proposez-vous des remboursements ?',
+    'faq.Les remboursements ne sont pas possibles. Si votre produit présente un défaut à la réception, contactez-nous et nous trouverons une solution (échange, etc.).' => 'Les remboursements ne sont pas possibles. Si votre produit présente un défaut à la réception, contactez-nous et nous trouverons une solution (échange, etc.).',
+    'faq.Le smartphone doit-il être connecté à internet ?' => 'Le smartphone doit-il être connecté à internet ?',
 ];

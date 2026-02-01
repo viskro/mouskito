@@ -178,9 +178,12 @@ class CheckoutController extends Controller
 
     public function confirmPayment(Request $request)
     {
+        Log::info('Début confirmation paiement');
+
         try {
             $stripeSecret = config('services.stripe.secret');
             if (empty($stripeSecret)) {
+                Log::error('Clé Stripe manquante');
                 return response()->json(['error' => 'Paiement indisponible pour le moment'], 503);
             }
             Stripe::setApiKey($stripeSecret);
@@ -189,26 +192,48 @@ class CheckoutController extends Controller
             $checkoutData = Session::get('checkout_data');
             $cartItems = $this->getCartItems();
 
+            Log::info('Données vérifiées', [
+                'payment_intent_id' => $paymentIntentId,
+                'checkout_data_exists' => !empty($checkoutData),
+                'cart_items_count' => $cartItems->count()
+            ]);
+
             if (!$paymentIntentId || !$checkoutData || $cartItems->isEmpty()) {
+                Log::error('Données manquantes', [
+                    'payment_intent_id' => $paymentIntentId,
+                    'checkout_data' => $checkoutData,
+                    'cart_items' => $cartItems->toArray()
+                ]);
                 return response()->json(['error' => 'Données manquantes'], 400);
             }
 
             $paymentIntent = PaymentIntent::retrieve($paymentIntentId);
+            Log::info('PaymentIntent récupéré', ['status' => $paymentIntent->status]);
 
             if ($paymentIntent->status === 'succeeded') {
+                Log::info('Création de la commande...');
                 $order = $this->createOrder($paymentIntent, $checkoutData, $cartItems);
+                Log::info('Commande créée', ['order_number' => $order->order_number]);
+
                 $this->updateStock($cartItems);
                 Session::forget(['cart', 'checkout_data', 'payment_intent_id']);
+                Log::info('Session nettoyée');
+
+                $redirectUrl = route('checkout.success', ['order' => $order->order_number]);
+                Log::info('Redirection vers', ['url' => $redirectUrl]);
 
                 return response()->json([
                     'success' => true,
-                    'redirect' => route('checkout.success', ['order' => $order->order_number])
+                    'redirect' => $redirectUrl
                 ]);
             }
 
+            Log::warning('Paiement non confirmé', ['status' => $paymentIntent->status]);
             return response()->json(['error' => 'Paiement non confirmé'], 400);
         } catch (\Exception $e) {
-            Log::error('Erreur confirmation paiement: ' . $e->getMessage());
+            Log::error('Erreur confirmation paiement: ' . $e->getMessage(), [
+                'trace' => $e->getTraceAsString()
+            ]);
             return response()->json(['error' => 'Erreur lors de la confirmation'], 500);
         }
     }

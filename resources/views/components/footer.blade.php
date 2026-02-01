@@ -63,7 +63,7 @@
                     &copy; {{ date('Y') }} Sound Tags. {{ __('common.Tous droits réservés.') }}
                 </p>
                 <p class="text-gray-400 text-sm mt-2 md:mt-0">
-                    {{ __('common.Fabriqué avec â¤ï¸ pour surprendre') }}
+                    {{ __('common.Fabriqué avec ❤️ pour surprendre') }}
                 </p>
             </div>
         </div>

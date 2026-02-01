@@ -12,9 +12,12 @@ class Product extends Model
 
     protected $fillable = [
         'name',
+        'name_en',
         'slug',
         'description',
+        'description_en',
         'short_description',
+        'short_description_en',
         'price',
         'original_price',
         'sku',
@@ -25,7 +28,9 @@ class Product extends Model
         // 'stock_quantity' supprimé (stock illimité)
         'is_active',
         'meta_title',
+        'meta_title_en',
         'meta_description',
+        'meta_description_en',
         'category',
         'tags',
         'sort_order',
@@ -54,6 +59,11 @@ class Product extends Model
         'is_on_sale',
         'audio_url',
         'image_url',
+        'localized_name',
+        'localized_description',
+        'localized_short_description',
+        'localized_meta_title',
+        'localized_meta_description',
     ];
 
     // Accessors
@@ -84,6 +94,52 @@ class Product extends Model
     public function getImageUrlAttribute(): ?string
     {
         return $this->image ? asset('storage/images/products/' . $this->image) : null;
+    }
+
+    // Accessors for localized content
+    public function getLocalizedNameAttribute(): string
+    {
+        $locale = app()->getLocale();
+        if ($locale === 'en' && !empty($this->name_en)) {
+            return $this->name_en;
+        }
+        return $this->name;
+    }
+
+    public function getLocalizedDescriptionAttribute(): string
+    {
+        $locale = app()->getLocale();
+        if ($locale === 'en' && !empty($this->description_en)) {
+            return $this->description_en;
+        }
+        return $this->description;
+    }
+
+    public function getLocalizedShortDescriptionAttribute(): string
+    {
+        $locale = app()->getLocale();
+        if ($locale === 'en' && !empty($this->short_description_en)) {
+            return $this->short_description_en;
+        }
+        return $this->short_description;
+    }
+
+    public function getLocalizedMetaTitleAttribute(): string
+    {
+        $locale = app()->getLocale();
+        if ($locale === 'en' && !empty($this->meta_title_en)) {
+            return $this->meta_title_en;
+        }
+        return $this->meta_title;
+    }
+
+    public function getLocalizedMetaDescriptionAttribute(): string
+    {
+        $locale = app()->getLocale();
+        if ($locale === 'en' && !empty($this->meta_description_en)) {
+            return $this->meta_description_en;
+        }
+        return $this->meta_description;
     }
 
     // Scopes

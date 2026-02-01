@@ -112,14 +112,14 @@
                     <a href="{{ route('products.show', $product) }}" class="bg-gray-800 rounded-2xl p-4 sm:p-6 border border-gray-700 hover:border-gray-600 hover:bg-gray-750 transition-all duration-200 group block">
                         <div class="aspect-square bg-gray-700 rounded-xl mb-3 sm:mb-4 overflow-hidden flex items-center justify-center group-hover:scale-[1.02] transition-transform shadow-lg">
                             @if($product->image)
-                                <img src="https://www.soundtags.fr/public/images/products/{{ $product->image }}" alt="{{ $product->name }}" class="w-full h-full object-cover" />
+                                <img src="https://www.soundtags.fr/public/images/products/{{ $product->image }}" alt="{{ $product->localized_name }}" class="w-full h-full object-cover" />
                             @else
                                 <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white/80" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.369 4.369 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
                                 </svg>
                             @endif
                         </div>
-                        <h3 class="font-semibold text-center mb-1 text-white truncate text-sm sm:text-base">{{ $product->name }}</h3>
+                        <h3 class="font-semibold text-center mb-1 text-white truncate text-sm sm:text-base">{{ $product->localized_name }}</h3>
                         <p class="text-xs sm:text-sm text-gray-400 text-center">{{ $product->formatted_price }}</p>
                     </a>
                 @empty

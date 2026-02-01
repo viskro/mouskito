@@ -14,7 +14,7 @@
                 </div>
 
                 <h1 class="font-display font-bold text-4xl text-white mb-4">
-                    {{ __('Commande confirmée !') }}
+                    {{ __('checkout.Commande confirmée') }}
                 </h1>
 
                 <p class="text-xl text-gray-300 mb-2">
@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="flex-1">
                                         <h4 class="text-white font-medium">{{ $item['name'] ?? 'Produit' }}</h4>
-                                        <p class="text-gray-400 text-sm">{{ __('common.Quantité :') }} {{ $item['quantity'] ?? 1 }}</p>
+                                        <p class="text-gray-400 text-sm">{{ __('common.Quantité:') }} {{ $item['quantity'] ?? 1 }}</p>
                                         <p class="text-white font-semibold">{{ number_format($item['subtotal'] ?? ($item['price'] ?? 0) * ($item['quantity'] ?? 1), 2) }} €</p>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                             <span>{{ number_format($summaryData['subtotal'] ?? 0, 2) }} €</span>
                         </div>
                         <div class="flex justify-between text-gray-400">
-                            <span>{{ __('Livraison') }}</span>
+                            <span>{{ __('common.Livraison') }}</span>
                             <span>{{ ($summaryData['shipping_cost'] ?? 0) > 0 ? number_format($summaryData['shipping_cost'], 2) . ' €' : 'Gratuite' }}</span>
                         </div>
                         <div class="flex justify-between font-semibold text-white text-lg pt-2 border-t border-gray-600">

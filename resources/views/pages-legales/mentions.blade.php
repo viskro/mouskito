@@ -11,32 +11,32 @@
                 <div class="space-y-6">
                     <section>
                         <h2 class="text-white text-2xl font-semibold mb-2">{{ __('legal.Éditeur du site') }}</h2>
-                        <p class="text-gray-300 leading-relaxed">Raison sociale: Sound Tags<br>Forme juridique: SAS<br>Siège social: 10 rue Exemple, 75000 Paris, France<br>RCS: Paris 000 000 000<br>TVA intracommunautaire: FR00 000000000</p>
+                        <p class="text-gray-300 leading-relaxed">{{ __('legal.Raison sociale') }}: Sound Tags<br>{{ __('legal.Forme juridique') }}: SAS<br>{{ __('legal.Siège social') }}: 10 rue Exemple, 75000 Paris, France<br>RCS: Paris 000 000 000<br>{{ __('legal.TVA intracommunautaire') }}: FR00 000000000</p>
                     </section>
 
                     <section>
                         <h2 class="text-white text-2xl font-semibold mb-2">{{ __('legal.Contact') }}</h2>
-                        <p class="text-gray-300 leading-relaxed">Email: support@soundtags.fr<br>Téléphone: +33 1 23 45 67 89</p>
+                        <p class="text-gray-300 leading-relaxed">{{ __('legal.Email') }}: support@soundtags.fr<br>{{ __('legal.Téléphone') }}: +33 1 23 45 67 89</p>
                     </section>
 
                     <section>
                         <h2 class="text-white text-2xl font-semibold mb-2">{{ __('legal.Directeur de la publication') }}</h2>
-                        <p class="text-gray-300 leading-relaxed">Nom du directeur de publication</p>
+                        <p class="text-gray-300 leading-relaxed">{{ __('legal.Nom du directeur de publication') }}</p>
                     </section>
 
                     <section>
                         <h2 class="text-white text-2xl font-semibold mb-2">{{ __('legal.Hébergement') }}</h2>
-                        <p class="text-gray-300 leading-relaxed">Nom de l’hébergeur<br>Adresse de l’hébergeur</p>
+                        <p class="text-gray-300 leading-relaxed">{{ __('legal.Nom de l\'hébergeur') }}: Ligne Web Services (LWS)<br>{{ __('legal.Adresse de l\'hébergeur') }}: sis 2 rue jules ferry 88190 Golbey</p>
                     </section>
 
                     <section>
                         <h2 class="text-white text-2xl font-semibold mb-2">{{ __('legal.Propriété intellectuelle') }}</h2>
-                        <p class="text-gray-300 leading-relaxed">L’ensemble des éléments du site (textes, graphismes, logos, contenus audio) est protégé par le droit d’auteur et la propriété intellectuelle. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site est interdite sans autorisation écrite préalable.</p>
+                        <p class="text-gray-300 leading-relaxed">{{ __('legal.Texte propriété intellectuelle') }}</p>
                     </section>
 
                     <section>
                         <h2 class="text-white text-2xl font-semibold mb-2">{{ __('legal.Responsabilité') }}</h2>
-                        <p class="text-gray-300 leading-relaxed">Sound Tags s’efforce d’assurer l’exactitude des informations mais ne saurait être tenu responsable des erreurs ou omissions.</p>
+                        <p class="text-gray-300 leading-relaxed">{{ __('legal.Texte responsabilité') }}</p>
                     </section>
                 </div>
             </div>

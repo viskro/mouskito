@@ -46,7 +46,7 @@
                     
                     <tr>
                         <td align="center" bgcolor="#1e293b" style="padding: 50px 30px;">
-                            <img src="{{ $message->embed(public_path('storage/images/logo.png')) }}" alt="Sound Tags" width="180" style="display: block; margin-bottom: 20px; border: 0;" />
+                            <img src="https://www.soundtags.fr/images/logo.png" alt="Sound Tags" width="180" style="display: block; margin-bottom: 20px; border: 0;" />
                             <h1 style="font-size: 36px; font-weight: 800; color: #ffffff; margin: 0; letter-spacing: 1px;">Sound Tags</h1>
                             <div style="background-color: #ffffff; color: #0f172a; padding: 12px 24px; border-radius: 30px; display: inline-block; margin-top: 20px; font-weight: 700; font-size: 16px;">
                                 ✓ Commande confirmée

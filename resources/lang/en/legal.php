@@ -52,7 +52,7 @@ return [
 
     // Livraison & Retours
     'Livraison' => 'Delivery',
-    'Les Sound Tags sont des produits physiques expédiés après confirmation du paiement. Délais indicatifs en France métropolitaine: 2 à 5 jours ouvrés.' => 'Sound Tags are physical products shipped after payment confirmation. Indicative delivery times in mainland France: 2 to 5 business days.',
+    'Les Sound Tags sont des produits physiques expédiés après confirmation du paiement.' => 'Sound Tags are physical products shipped after payment confirmation.',
     'Retours & Remboursements' => 'Returns & Refunds',
     'Les remboursements ne sont pas possibles. En cas de produit défectueux à la réception, contactez notre support sous 48h pour organiser un échange ou une solution adaptée.' => 'Refunds are not possible. In case of a defective product upon receipt, contact our support within 48 hours to arrange an exchange or appropriate solution.',
     'Support' => 'Support',
@@ -68,6 +68,19 @@ return [
     'Disponibilité' => 'Availability',
     'Le site peut être interrompu pour maintenance. Sound Tags ne saurait être tenu responsable des interruptions.' => 'The site may be interrupted for maintenance. Sound Tags cannot be held responsible for interruptions.',
     'Le site est fourni "en l\'état". Sound Tags ne garantit pas l\'absence d\'erreurs mais met tout en œuvre pour assurer la qualité du service.' => 'The site is provided "as is". Sound Tags does not guarantee the absence of errors but makes every effort to ensure service quality.',
+
+    // Mentions légales - Champs spécifiques
+    'Raison sociale' => 'Company name',
+    'Forme juridique' => 'Legal form',
+    'Siège social' => 'Head office',
+    'TVA intracommunautaire' => 'VAT number',
+    'Email' => 'Email',
+    'Téléphone' => 'Phone',
+    'Nom du directeur de publication' => 'Name of the publication director',
+    'Nom de l\'hébergeur' => 'Hosting provider name',
+    'Adresse de l\'hébergeur' => 'Hosting provider address',
+    'Texte propriété intellectuelle' => 'All elements of the site (texts, graphics, logos, audio content) are protected by copyright and intellectual property. Any reproduction, representation, modification, publication, adaptation of all or part of the site elements is prohibited without prior written authorization.',
+    'Texte responsabilité' => 'Sound Tags strives to ensure the accuracy of information but cannot be held responsible for errors or omissions.',
 
     // CGV
     'Les présentes conditions régissent les ventes de produits physiques « Sound Tags » proposées par Sound Tags aux consommateurs en France.' => 'These terms govern the sale of physical "Sound Tags" products offered by Sound Tags to consumers in France.',

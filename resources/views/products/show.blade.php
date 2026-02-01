@@ -1,6 +1,6 @@
 <x-app-layout>
-    <x-slot name="title">{{ $product->meta_title ?? $product->name . ' - Sound Tags' }}</x-slot>
-    <x-slot name="metaDescription">{{ $product->meta_description ?? $product->short_description }}</x-slot>
+    <x-slot name="title">{{ $product->localized_meta_title ?? $product->localized_name . ' - Sound Tags' }}</x-slot>
+    <x-slot name="metaDescription">{{ $product->localized_meta_description ?? $product->localized_short_description }}</x-slot>
 
     <!-- Breadcrumb -->
     <section class="bg-gray-800 border-b border-gray-700">
@@ -27,7 +27,7 @@
                             <svg class="w-4 h-4 text-gray-600 mx-2" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-gray-300">{{ $product->name }}</span>
+                            <span class="text-gray-300">{{ $product->localized_name }}</span>
                         </div>
 
                     </li>
@@ -48,7 +48,7 @@
                         @if($product->image)
                             <img
                                 src="https://www.soundtags.fr/public/images/products/{{ $product->image }}"
-                                alt="{{ $product->name }}"
+                                alt="{{ $product->localized_name }}"
                                 class="w-full h-full object-cover"
                             >
                         @else
@@ -65,7 +65,7 @@
                         <x-product.audio-player
                             audioUrl="https://www.soundtags.fr/public/audio/{{ $product->audio_file }}"
                             :duration="$product->audio_duration"
-                            :productName=" $product->name "
+                            :productName="$product->localized_name"
                         />
                     @endif
 
@@ -91,7 +91,7 @@
                     <!-- Header -->
                     <div>
                         <h1 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white mb-4">
-                            {{ $product->name }}
+                            {{ $product->localized_name }}
                         </h1>
 
                         <!-- Prix -->
@@ -116,7 +116,7 @@
                     @if($product->short_description)
                         <div class="prose prose-invert max-w-none">
                             <p class="text-gray-300 text-lg leading-relaxed">
-                                {{ $product->short_description }}
+                                {{ $product->localized_short_description }}
                             </p>
                         </div>
                     @endif

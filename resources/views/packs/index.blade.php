@@ -18,7 +18,7 @@
                 </p>
 
                 <!-- Stats -->
-                <div class="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto">
+                <div class="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto">
                     <div class="text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">35%</div>
                         <div class="text-gray-400 text-xs sm:text-sm">{{ __('packs.Économies max') }}</div>
@@ -26,10 +26,6 @@
                     <div class="text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">{{ $soundTags->count() }}+</div>
                         <div class="text-gray-400 text-xs sm:text-sm">{{ __('packs.Sound tags au choix') }}</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">â¡</div>
-                        <div class="text-gray-400 text-xs sm:text-sm">{{ __('packs.Expédition') }}</div>
                     </div>
                 </div>
             </div>
@@ -153,11 +149,11 @@
                             </div>
 
                             <h3 class="font-display font-bold text-lg sm:text-xl lg:text-2xl text-white mb-3 sm:mb-4">
-                                {{ $pack->name }}
+                                {{ $pack->localized_name }}
                             </h3>
 
                             <p class="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                                {{ $pack->short_description }}
+                                {{ $pack->localized_short_description }}
                             </p>
 
                             <!-- Prix -->

@@ -43,7 +43,7 @@ return [
     'Vos informations sont protégées par Stripe' => 'Vos informations sont protégées par Stripe',
     'Payer' => 'Payer',
     'Paiement sécurisé SSL 256-bit' => 'Paiement sécurisé SSL 256-bit',
-    'Commande confirmée' => 'Commande confirmée',
+    'Commande confirmée' => 'Commande confirmée !',
     'Votre commande Sound Tags a été confirmée. Merci pour votre achat !' => 'Votre commande Sound Tags a été confirmée. Merci pour votre achat !',
     'Commande confirmée !' => 'Commande confirmée !',
     'Merci pour votre achat' => 'Merci pour votre achat',

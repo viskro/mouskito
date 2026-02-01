@@ -8,12 +8,12 @@
                 <div class="mb-8">
                     <div class="flex items-center justify-center space-x-4 mb-6">
                         <div class="flex items-center text-green-400">
-                            <div class="w-8 h-8 bg-green-400 text-gray-900 rounded-full flex items-center justify-center text-sm font-bold">â</div>
+                            <div class="w-8 h-8 bg-green-400 text-gray-900 rounded-full flex items-center justify-center text-sm font-bold">1</div>
                             <span class="ml-2 text-sm font-medium">{{ __('common.Panier') }}</span>
                         </div>
                         <div class="w-12 h-0.5 bg-green-400"></div>
                         <div class="flex items-center text-green-400">
-                            <div class="w-8 h-8 bg-green-400 text-gray-900 rounded-full flex items-center justify-center text-sm font-bold">â</div>
+                            <div class="w-8 h-8 bg-green-400 text-gray-900 rounded-full flex items-center justify-center text-sm font-bold">2</div>
                             <span class="ml-2 text-sm font-medium">{{ __('checkout.Informations personnelles') }}</span>
                         </div>
                         <div class="w-12 h-0.5 bg-white"></div>
@@ -353,6 +353,7 @@
                 }
 
                 if (paymentIntent.status === 'succeeded') {
+                    console.log('Paiement réussi, confirmation de la commande...');
                     // Confirmer la commande côté serveur
                     const response = await fetch('{{ route("checkout.confirm-payment") }}', {
                         method: 'POST',
@@ -362,13 +363,19 @@
                         }
                     });
 
+                    console.log('Response status:', response.status);
                     const result = await response.json();
+                    console.log('Response result:', result);
 
                     if (result.success) {
+                        console.log('Redirection vers:', result.redirect);
                         window.location.href = result.redirect;
                     } else {
+                        console.error('Erreur de confirmation:', result.error);
                         throw new Error(result.error);
                     }
+                } else {
+                    console.log('Statut du paiement:', paymentIntent.status);
                 }
             } catch (error) {
                 console.error('Erreur paiement:', error);
